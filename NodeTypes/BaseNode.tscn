@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxfh6junq2peu"]
+
+[ext_resource type="Script" path="res://NodeTypes/BaseNode.gd" id="1_j5m20"]
+
+[node name="BaseNode" type="GraphNode"]
+offset_right = 279.0
+offset_bottom = 78.0
+resizable = true
+title = "Base"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_j5m20")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "EXEC"
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "EXEC"
+horizontal_alignment = 2

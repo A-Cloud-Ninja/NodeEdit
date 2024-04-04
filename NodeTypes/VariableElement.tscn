@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://bythbcgy0x4k7"]
+
+[ext_resource type="Script" path="res://NodeTypes/VariableElement.gd" id="1_lspgw"]
+
+[node name="VariableNode" type="GraphNode"]
+offset_right = 148.0
+offset_bottom = 92.0
+resizable = true
+title = "Get Variable"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 1
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_lspgw")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+text = "VariableName"
+
+[connection signal="text_set" from="TextEdit" to="." method="_on_text_edit_text_set"]

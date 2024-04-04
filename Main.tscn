@@ -1,0 +1,78 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx1s3h72h33m0"]
+
+[ext_resource type="Script" path="res://GraphController.gd" id="1_xlrc0"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xlrc0")
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_right = 211.0
+offset_bottom = 43.0
+selected = 0
+allow_reselect = true
+
+[node name="GraphEdit" type="GraphEdit" parent="."]
+layout_mode = 0
+offset_top = 45.0
+offset_right = 2560.0
+offset_bottom = 1440.0
+scroll_offset = Vector2(-832, -511)
+
+[node name="GraphNode" type="GraphNode" parent="GraphEdit"]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 253.0
+offset_right = 348.0
+offset_bottom = 356.0
+mouse_filter = 1
+position_offset = Vector2(-596, -258)
+title = "Init"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = true
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+
+[node name="Label" type="Label" parent="GraphEdit/GraphNode"]
+layout_mode = 2
+text = "
+"
+
+[node name="Label2" type="Label" parent="GraphEdit/GraphNode"]
+layout_mode = 2
+text = "Exec"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 218.0
+offset_right = 342.0
+offset_bottom = 45.0
+text = "Start Timer"
+
+[connection signal="item_selected" from="OptionButton" to="." method="NewNode"]
+[connection signal="connection_request" from="GraphEdit" to="." method="_on_graph_edit_connection_request"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_timer_timeout"]

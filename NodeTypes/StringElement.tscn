@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://cabbg11h4qubq"]
+
+[ext_resource type="Script" path="res://NodeTypes/StringElement.gd" id="1_ma5t6"]
+
+[node name="StringNode" type="GraphNode"]
+offset_right = 148.0
+offset_bottom = 92.0
+resizable = true
+title = "String"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 1
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_ma5t6")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Test"
